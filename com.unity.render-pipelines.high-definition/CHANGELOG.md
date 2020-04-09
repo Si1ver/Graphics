@@ -96,6 +96,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added support for hair for ray tracing effects.
 - Added support for alpha to coverage for HDRP shaders and shader graph
 - Added support for Quality Levels to Subsurface Scattering.
+- Added option to disable XR rendering on the camera settings.
 
 ### Fixed
 - Fix when rescale probe all direction below zero (1219246)
@@ -500,6 +501,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed shadow cascade tooltip when using the metric mode (case 1229232)
 - Fixed how the area light influence volume is computed to match rasterization.
 - Focus on Decal uses the extends of the projectors
+- Fixed usage of light size data that are not available at runtime.
+- Fixed the depth buffer copy made before custom pass after opaque and normal injection point.
+- Fix for issue that prevented scene from being completely saved when baked reflection probes are present and lighting is set to auto generate.
+- Fixed drag area width at left of Light's intensity field in Inspector.
+- Fixed light type resolution when performing a reset on HDAdditionalLightData (case 1220931)
+- Fixed reliance on atan2 undefined behavior in motion vector debug shader.
 - Fixed PBR shader ZTest rendering in deferred.
 
 ### Changed
@@ -609,6 +616,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Temporal Anti aliasing improvements.
 - Optimized PrepareLightsForGPU (cost reduced by over 25%) and PrepareGPULightData (around twice as fast now).
 - Moved scene view camera settings for HDRP from the preferences window to the scene view camera settings window.
+- Updated shaders to be compatible with Microsoft's DXC.
 
 ## [7.1.1] - 2019-09-05
 
